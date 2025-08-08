@@ -19,7 +19,7 @@ bake: ## Setup UV environment and install base dependencies
 
 run: ## Launch the main Python application (Streamlit)
 	@echo "🚀 Running the Rostr extraction..."
-	@uv run hierarchie-rostr.py || { echo "❌ Application failed to run."; exit 1; }
+	@uv run main.py || { echo "❌ Application failed to run."; exit 1; }
 
 reqs: ## Export dependencies to requirements.txt
 	@echo "📦 Generating requirements.txt..."
