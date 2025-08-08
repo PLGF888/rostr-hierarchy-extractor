@@ -43,10 +43,6 @@ wait = WebDriverWait(driver, 20)
 
 # Página inicial
 driver.get(answers["link"])
-# driver.get("https://rostr.disney.com/people/270a898dd93f3a8d4a5bc73c9c5ea4c3?locale=en") #ASMAA
-# driver.get("https://rostr.disney.com/people/018b65ccf17857ac5b0002e6f0f0f9ee?locale=en")  #Karine
-# driver.get("https://rostr.disney.com/people/ea7b736f8ac180dc27b95c3bf8d5220c?locale=en")  #KENNY
-
 
 # Resultado da hierarquia
 hierarquia = []
