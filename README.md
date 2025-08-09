@@ -1,6 +1,6 @@
-# 👤 Extracteur de Hiérarchie ROSTR
+# 👤 Extracteur de Hiérarchie 
 
-Ce projet Python effectue une extraction automatique de la hiérarchie des employés à partir d’un lien de la plateforme interne **ROSTR (Disney)** à l’aide de **Selenium**.
+Ce projet Python effectue une extraction automatique de la hiérarchie des employés à partir d’un lien de la plateforme interne  à l’aide de **Selenium**.
 
 ---
 
