@@ -1,5 +1,4 @@
 import csv
-import re
 import sys
 from datetime import datetime
 
@@ -17,14 +16,15 @@ pretty_errors.configure(
 )
 
 
-def validar_link(answers, current):
+"""def validar_link(answers, current):
     if re.match(r"^https?://", current):
         return True
     return "Por favor, insira um link válido começando com http:// ou https://"
+"""
 
 
 questions = [
-    inquirer.Text("link", message="Insira o link da página inicial", validate=validar_link),
+    inquirer.Text("link", message="Insira o link da página inicial"),
 ]
 
 answers = inquirer.prompt(questions)
@@ -100,7 +100,6 @@ def visitar_pessoa_por_link(link, supervisor=None):
         # Extrair informações da seção Company Info
         info = extrair_company_info()
 
-        # -----------------------------------TESTE INFO POSTE --------------------------------------- #
         try:
             p_tag = driver.find_element(By.CSS_SELECTOR, "p.text-center.visible-xs.visible-sm span")
             linhas = p_tag.get_attribute("innerHTML").split("<br>")
@@ -109,8 +108,6 @@ def visitar_pessoa_por_link(link, supervisor=None):
         except:
             cargo = ""
             locacao = ""
-
-        # -----------------------------------TESTE INFO POSTE --------------------------------------- #
 
         # Adicionar à hierarquia
         hierarquia.append(
@@ -161,7 +158,7 @@ def iniciar():
 iniciar()
 
 # Salvar CSV
-with open(f"hierarquia_{datetime.today().strftime('%d-%m-%Y')}.csv", "w", encoding="utf-8", newline="") as f:
+with open(f"./data/output/hierarquia_{datetime.today().strftime('%d-%m-%Y')}.csv", "w", encoding="utf-8", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["Nome", "Supervisor", "Cargo", "Locação", "Company Code", "Business Area", "Personnel Area", "Organizational Unit", "Cost Center", "Employee Type"])
     writer.writerows(hierarquia)
